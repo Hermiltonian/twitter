@@ -1,7 +1,7 @@
 # config valid for current version and patch releases of Capistrano
 lock "~> 3.10.2"
 
-set :application, "chat-space"
+set :application, "twitter"
 set :repo_url, "git@github.com:Hermiltonian/twitter.git"
 
 # Default branch is :master
