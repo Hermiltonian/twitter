@@ -58,4 +58,9 @@ RSpec.configure do |config|
   # Fakerを省略記法で使用できるようにする
   config.include FactoryGirl::Syntax::Methods
 
+  Dir[Rails.root.join('spec/support/**/*.rb')].each { |f| require f }
+  # deviseのテストヘルパーをロードする
+  config.include Devise::Test::ControllerHelpers, type: :controller
+  # 作成したログインモジュールを追加する
+  config.include ControllerMacros, type: :controller
 end
