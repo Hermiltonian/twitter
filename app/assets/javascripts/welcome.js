@@ -6,14 +6,19 @@ function adjustSizeOfContents() {
   var contentHeight = 0;                                              // 現在のコンテンツの高さ
   var newContentHeight = windowHeight - bannerHeight - footerHeight;  // 新たに設定しようとするコンテンツの高さ
 
+  var utilHeight = $(".StaticLoggedOutHomePage-signupBlock").outerHeight(true);           // サインアップブロックの高さ
+  var comuHeight = $(".StaticLoggedOutHomePage-communicationContent").outerHeight(true);  // コミュニケーションブロックの高さ
+
   // 現在のコンテンツの必要最低限の高さを取得
-  if ($(".StaticLoggedOutHomePage-signupBlock").outerHeight(true) > $(".StaticLoggedOutHomePage-communicationContent").outerHeight(true)) {
-    contentHeight = $(".StaticLoggedOutHomePage-signupBlock").outerHeight(true);
+  if ($(".StaticLoggedOutHomePage-content").css("display") == "flex") {
+    // displayがflexの場合は左右のブロックの高い方を採用
+    contentHeight = (comuHeight > utilHeight) ? comuHeight : utilHeight;
   } else {
-    contentHeight = $(".StaticLoggedOutHomePage-communicationContent").outerHeight(true);
+    // displayがflex出ない場合（blockを想定）の場合は上下のブロックの高さの合計を採用
+    contentHeight = utilHeight + comuHeight;
   }
 
-  // 現在のコンテンツの方が高いなら高さを変えない
+  // 現在のコンテンツの方が高さがあるなら高さを変えない
   $(".StaticLoggedOutHomePage-content").height((contentHeight > newContentHeight) ? contentHeight : newContentHeight);
 }
 
