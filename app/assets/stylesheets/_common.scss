@@ -50,6 +50,14 @@ a {
   background-color: transparent;
 }
 
+input {
+  -webkit-transition: background .2s linear;
+     -moz-transition: background .2s linear;
+      -ms-transition: background .2s linear;
+       -o-transition: background .2s linear;
+          transition: background .2s linear;
+}
+
 .Icon {
   background-color: transparent;
   display: inline-block;

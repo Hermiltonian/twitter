@@ -6,15 +6,20 @@
 
   .StaticLoggedOutHomePage-content {
     background-color: #fff;
-    @extend .flex-md-row-reverse;
+    flex-direction: row-reverse;
     flex-grow: 1;
+
+    @media (max-width: 800px) {
+      display: block;
+      height: 100%;
+    }
 
     .StaticLoggedOutHomePage-cell  {
       display: flex;
       justify-content: center;
       align-items: center;
-      flex-grow: 1;
-      flex-shrink: 1;
+      flex: 1;
+      position: relative;
     }
     .StaticLoggedOutHomePage-utilityBlock {
       .StaticLoggedOutHomePage-login {
@@ -66,7 +71,6 @@
           }
 
           .LoginForm-submit {
-
           }
         }
       }
@@ -105,7 +109,11 @@
         }
         .StaticLoggedOutHomePage-noSignupForm {
           .StaticLoggedOutHomePage-signupSubtitle {
+            margin: 16px auto;
             margin-top: 48px;
+            color: #14171a;
+            font-size: 18px;
+            line-height: 24px;
             font-weight: bold;
           }
           .StaticLoggedOutHomePage-buttons {
@@ -125,6 +133,13 @@
   .StaticLoggedOutHomePage-communicationBlock {
     background-color: $theme-color;
     overflow: hidden;
+    position: relative;
+
+    @media only screen and (max-width: 800px) {
+      flex-wrap: wrap;
+      margin-bottom: 0;
+      padding-top: 0;
+    }
 
     .twitterIcon-bird {
       max-width: none;
@@ -134,6 +149,12 @@
         height: 140vh;
         right: -80vh;
         top: -20vh;
+      }
+
+      @media only screen and (max-width: 800px) {
+        height: 150%;
+        right: -30%;
+        top: -30%;
       }
     }
 
@@ -231,11 +252,4 @@
       }
     }
   }
-}
-
-.StaticLoggedOutHomePage-signupSubtitle {
-  margin: 16px auto;
-  color: #14171a;
-  font-size: 18px;
-  line-height: 24px;
 }

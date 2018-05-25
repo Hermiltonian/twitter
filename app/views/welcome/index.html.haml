@@ -1,6 +1,6 @@
 .container-fluid.StaticLoggedOutHomePage
   .row.StaticLoggedOutHomePage-content
-    .col-lg-6.StaticLoggedOutHomePage-cell.StaticLoggedOutHomePage-utilityBlock
+    .StaticLoggedOutHomePage-cell.StaticLoggedOutHomePage-utilityBlock
       .StaticLoggedOutHomePage-login
         %form.LoginForm{action: "https://twitter.com/sessions", method: "post"}
           .LoginForm-input.LoginForm-username
@@ -20,7 +20,7 @@
           .StaticLoggedOutHomePage-buttons
             = link_to "アカウント作成", "https://twitter.com/signup", class: "EdgeButton EdgeButton--medium EdgeButton--primary StaticLoggedOutHomePage-buttonSignup form-control"
             = link_to "ログイン", "/login", class: "EdgeButton EdgeButton--medium EdgeButton--secondary StaticLoggedOutHomePage-buttonLogin form-control"
-    .col-lg-6.StaticLoggedOutHomePage-cell.StaticLoggedOutHomePage-communicationBlock
+    .StaticLoggedOutHomePage-cell.StaticLoggedOutHomePage-communicationBlock
       / ?xml version="1.0" encoding="UTF-8"?
       %svg.twitterIcon-bird{version: "1.1", viewbox: "0 0 1208 982", xmlns: "http://www.w3.org/2000/svg", "xmlnsxlink": "http://www.w3.org/1999/xlink"}
         / Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch
