@@ -1,5 +1,5 @@
-.container-fluid.StaticLoggedOutHomePage
-  .row.StaticLoggedOutHomePage-content
+.StaticLoggedOutHomePage
+  .StaticLoggedOutHomePage-content
     .StaticLoggedOutHomePage-cell.StaticLoggedOutHomePage-utilityBlock
       .StaticLoggedOutHomePage-login
         %form.LoginForm{action: "https://twitter.com/sessions", method: "post"}
@@ -40,7 +40,7 @@
         .StaticLoggedOutHomePage-communicationItem
           %span.Icon= fa_icon("comment")
           Twitterに参加しましょう。
-  #banners.row
+  #banners
     .Banner.Banner--aboveNav.Banner-darkGray.gdpr-privacy-banner
       .Banner-contentContainer
         #account-suspended.Banner-textContent
@@ -49,7 +49,7 @@
             = link_to "詳細はこちら", "https://help.twitter.com/rules-and-policies/update-privacy-policy", class: "learn-more"
         .Banner-actions.flox-shring-0
           %button.EdgeButton.EdgeButton--transparent{type: "button"} OK
-  .row.StreamsFooter.StreamsFooter--fixed
+  .StreamsFooter.StreamsFooter--fixed
     %ul.StreamsFooter-list.u-cf
       %li.StreamsFooter-item
         = link_to "Twitterについて", "/about"
