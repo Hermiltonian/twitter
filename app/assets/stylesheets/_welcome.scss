@@ -1,6 +1,5 @@
 .StaticLoggedOutHomePage {
   min-height: 100%;
-  // height: 100vh;
   display: flex;
   flex-direction: column;
   font-size: 14px;
@@ -10,7 +9,6 @@
     display: flex;
     flex-direction: row-reverse;
     flex-grow: 1;
-
     @media (max-width: 800px) {
       display: block;
       height: 100%;
@@ -30,7 +28,6 @@
         left: 0;
         top: 20px;
         width: 100%;
-
         .LoginForm{
           justify-content: center;
           max-width: 600px;
@@ -38,80 +35,62 @@
           padding-left: 20px;
           padding-right: 20px;
           display: none;
-
           @media (min-width: 1024px) and (min-height: 661px) {
             display: flex;
             flex-flow: row nowrap;
             align-items: start;
           }
-
           input {
             box-sizing: border-box;
             margin-top: 12px;
             padding: 12px;
             width: auto;
           }
-
           .LoginForm-input {
             margin-right: 12px;
             width: 210px;
-
             input {
               width: 100%;
               @extend .form-control;
             }
           }
-
-          .LoginForm-username {
-          }
-
+          .LoginForm-username {}
           .LoginForm-password {
             .LoginForm-staticForgot {
-              a.forgot {
-                color: #aab8c2;
-              }
+              a.forgot {color: #aab8c2;}
             }
           }
-
-          .LoginForm-submit {
-          }
+          .LoginForm-submit {}
         }
       }
 
       .StaticLoggedOutHomePage-signupBlock {
         max-width: 350px;
-
         .StaticLoggedOutHomePage-signupHeader {
           margin: 16px auto;
           display: flex;
           justify-content: space-between;
           align-items: center;
-
           .Icon--bird {
             color: $theme-color;
             font-size: 45px;
             margin-bottom: 8px;
           }
-
           .StaticLoggedOutHomePage-input {
             padding: 12px;
           }
-
           .StaticLoggedOutHomePage-narrowLoginButton {
             display: none;
-
             @media only screen and (max-width: 1023px), screen and (max-height: 660px) {
               display: inline-block;
             }
           }
         }
-
         .StaticLoggedOutHomePage-signupTitle {
           font-size: 27px;
           line-height: 32px;
           font-weight: bold;
         }
-
         .StaticLoggedOutHomePage-noSignupForm {
           .StaticLoggedOutHomePage-signupSubtitle {
             margin: 16px auto;
@@ -121,17 +100,9 @@
             line-height: 24px;
             font-weight: bold;
           }
-
           .StaticLoggedOutHomePage-buttons {
-            .StaticLoggedOutHomePage-buttonSignup {
-              display: block;
-              margin-bottom: 16px;
-            }
-
-            .StaticLoggedOutHomePage-buttonLogin {
-              display: block;
-              margin-bottom: 16px;
-            }
+            .StaticLoggedOutHomePage-buttonSignup {display: block; margin-bottom: 16px;}
+            .StaticLoggedOutHomePage-buttonLogin { display: block; margin-bottom: 16px;}
           }
         }
       }
@@ -140,33 +111,19 @@
     .StaticLoggedOutHomePage-communicationBlock {
       background-color: $theme-color;
       overflow: hidden;
-
       @media only screen and (max-width: 800px) {
         flex-wrap: wrap;
         margin-bottom: 0;
         padding-top: 0;
       }
-
       .twitterIcon-bird {
         max-width: none;
         position: absolute;
-
-        @media only screen and (min-width: 800px) {
-          height: 140vh;
-          right: -80vh;
-          top: -20vh;
-        }
-
-        @media only screen and (max-width: 800px) {
-          height: 150%;
-          right: -30%;
-          top: -30%;
-        }
+        @media only screen and (min-width: 800px) {height: 140vh; right: -80vh; top: -20vh;}
+        @media only screen and (max-width: 800px) {height: 150%; right: -30%; top: -30%;}
       }
-
       .StaticLoggedOutHomePage-communicationContent {
         max-width: 440px;
-
         .StaticLoggedOutHomePage-communicationItem {
           margin: 48px auto;
           position: relative;
@@ -175,7 +132,6 @@
           font-weight: bold;
           line-height: 24px;
           display: flex;
-
           .Icon {
             font-size: 35px;
             margin-right: 16px;
@@ -193,8 +149,7 @@
     border-radius: 6px;
     line-height: 16px;
     width: 100vw;
-
-  &--aboveNav {
+    &--aboveNav {
         margin: 0;
         height: 62px;
         display: flex;
@@ -204,15 +159,10 @@
         border-radius: 0;
         line-height: 20px;
     }
-
     &-darkGray {
       color: #fff;
       background-color: #66757f;
-
-      a {
-        color: #fff;
-        text-decoration: underline;
-      }
+      a {color: #fff; text-decoration: underline;}
     }
 
     .Banner-contentContainer {
@@ -222,21 +172,18 @@
       box-sizing: border-box;
       display: flex;
       align-items: center;
-
       .Banner-textContent {
         font-size: 14px;
         flex-grow: 1;
       }
-
       .Banner-actions {
-          padding-left: 15px;
+        padding-left: 15px;
       }
     }
   }
 
   .StreamsFooter {
     position: static;
-
     .StreamsFooter-list {
       width: auto;
       margin: 0 auto;
@@ -246,16 +193,10 @@
       flex-direction: row;
       flex-wrap: wrap;
       justify-content: center;
-
       .StreamsFooter-item {
         padding: 0 9px;
-
-        a {
-          font-size: 12px;
-          color: #aab8c2;
-        }
+        a {font-size: 12px; color: #aab8c2;}
       }
-
       .StreamsFooter-copyright {
         font-size: 12px;
         color: #aab8c2;
