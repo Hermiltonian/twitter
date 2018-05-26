@@ -14,7 +14,7 @@ function adjustSizeOfContents() {
     // displayがflexの場合は左右のブロックの高い方を採用
     contentHeight = (comuHeight > utilHeight) ? comuHeight : utilHeight;
   } else {
-    // displayがflex出ない場合（blockを想定）の場合は上下のブロックの高さの合計を採用
+    // displayがflexでない場合（blockを想定）は上下のブロックの高さの合計を採用
     contentHeight = utilHeight + comuHeight;
   }
 
