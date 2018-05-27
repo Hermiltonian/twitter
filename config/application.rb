@@ -20,6 +20,5 @@ module Twitter
 
     config.i18n.default_locale = :ja # デフォルトのロケール変更
     config.time_zone = 'Asia/Tokyo'  # デフォルトのタイムゾーン変更
-    config.force_ssl = true          # SSL接続を強制
   end
 end

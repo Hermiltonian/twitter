@@ -1,0 +1,88 @@
+.StaticLoggedOutHomePage
+  .StaticLoggedOutHomePage-content
+    .StaticLoggedOutHomePage-cell.StaticLoggedOutHomePage-utilityBlock
+      .StaticLoggedOutHomePage-login
+        %form.LoginForm{action: "https://twitter.com/sessions", method: "post"}
+          .LoginForm-input.LoginForm-username
+            %input.text-input.email-input{autocomplete: "username", name: "session[username_or_email]", placeholder: "電話番号/メールアドレス/ユーザー名", type: "text"}/
+          .LoginForm-input.LoginForm-password
+            %input.text-input{autocomplete: "current-password", name: "session[password]", placeholder: "パスワード", type: "password"}
+            .LoginForm-staticForgot
+              = link_to "パスワードを忘れた場合はこちら", "/account/begin_password_reset", class: "forgot"
+          %input.EdgeButton.EdgeButton--secondary.EdgeButton--medium.submit{type: "submit", value: "ログイン"}
+      .StaticLoggedOutHomePage-signupBlock
+        .StaticLoggedOutHomePage-signupHeader
+          %span.Icon.Icon--bird= fa_icon("twitter")
+          = link_to "ログイン", "/login", class: "StaticLoggedOutHomePage-input StaticLoggedOutHomePage-narrowLoginButton EdgeButton EdgeButton--secondary EdgeButton--small float-right"
+        %h1.StaticLoggedOutHomePage-signupTitle 「いま」起きていることを見つけよう
+        .StaticLoggedOutHomePage-noSignupForm
+          %h2.StaticLoggedOutHomePage-signupSubtitle Twitterをはじめよう
+          .StaticLoggedOutHomePage-buttons
+            = link_to "アカウント作成", "https://twitter.com/signup", class: "EdgeButton EdgeButton--medium EdgeButton--primary StaticLoggedOutHomePage-buttonSignup form-control"
+            = link_to "ログイン", "/login", class: "EdgeButton EdgeButton--medium EdgeButton--secondary StaticLoggedOutHomePage-buttonLogin form-control"
+    .StaticLoggedOutHomePage-cell.StaticLoggedOutHomePage-communicationBlock
+      / ?xml version="1.0" encoding="UTF-8"?
+      %svg.twitterIcon-bird{version: "1.1", viewbox: "0 0 1208 982", xmlns: "http://www.w3.org/2000/svg", "xmlnsxlink": "http://www.w3.org/1999/xlink"}
+        / Generator: Sketch 45.2 (43514) - http://www.bohemiancoding.com/sketch
+        %title bird
+        %desc Created with Sketch.
+        %defs
+        %g#Final-Horizon{fill: "none", "fill-rule" => "evenodd", stroke: "none", "stroke-width" => "1"}
+          %g#Artboard{fill: "#1B95E0", "fill-rule" => "nonzero", transform: "translate(-286.000000, -117.000000)"}
+            %path#bird{:d => "M1493.75308,233.195911 C1449.31783,252.922544 1401.56126,266.207828 1351.43951,272.19627 C1402.61804,241.549536 1441.92034,192.987798 1460.3889,135.116296 C1412.53168,163.498493 1359.49119,184.130942 1303.02874,195.252335 C1257.88897,147.093181 1193.42514,117 1122.16771,117 C962.190754,117 844.636121,266.258151 880.768067,421.202806 C674.896491,410.886582 492.324484,312.253414 370.089808,162.341063 C305.17308,273.705962 336.423691,419.391176 446.731805,493.16476 C406.171431,491.856361 367.925917,480.734968 334.561738,462.165765 C331.844294,576.95263 414.122472,684.342008 533.287442,708.245454 C498.413572,717.706186 460.218381,719.9204 421.368991,712.47259 C452.871217,810.904465 544.358512,882.514158 652.854997,884.52708 C548.686294,966.201382 417.443793,1002.68559 286,987.186091 C395.653915,1057.48739 525.940278,1098.50067 665.838342,1098.50067 C1125.89162,1098.50067 1385.81015,709.956437 1370.10936,361.469352 C1418.52012,326.494836 1460.53987,282.864756 1493.75308,233.195911 Z"}
+      .StaticLoggedOutHomePage-communicationContent
+        .StaticLoggedOutHomePage-communicationItem
+          %span.Icon= fa_icon("search")
+          あなたの「好き」をフォローしよう。
+        .StaticLoggedOutHomePage-communicationItem
+          %span.Icon= fa_icon("user")
+          話題のトピックを追いかけましょう。
+        .StaticLoggedOutHomePage-communicationItem
+          %span.Icon= fa_icon("comment")
+          Twitterに参加しましょう。
+  #banners
+    .Banner.Banner--aboveNav.Banner-darkGray.gdpr-privacy-banner
+      .Banner-contentContainer
+        #account-suspended.Banner-textContent
+          %p.title
+            Twitterの利用規約とプライバシーポリシーが新しくなります。これは2018年5月25日から有効です。
+            = link_to "詳細はこちら", "https://help.twitter.com/rules-and-policies/update-privacy-policy", class: "learn-more"
+        .Banner-actions.flox-shring-0
+          %button.EdgeButton.EdgeButton--transparent{type: "button"} OK
+  .StreamsFooter.StreamsFooter--fixed
+    %ul.StreamsFooter-list.u-cf
+      %li.StreamsFooter-item
+        = link_to "Twitterについて", "/about"
+      %li.StreamsFooter-item
+        = link_to "ヘルプセンター", "//support.twitter.com"
+      %li.StreamsFooter-item
+        = link_to "ブログ", "https://blog.twitter.com/japan"
+      %li.StreamsFooter-item
+        = link_to "ステータス", "http://status.twitter.com"
+      %li.StreamsFooter-item
+        = link_to "採用情報", "https://about.twitter.com/careers"
+      %li.StreamsFooter-item
+        = link_to "規約", "/tos"
+      %li.StreamsFooter-item
+        = link_to "プライバシーポリシー", "/privacy"
+      %li.StreamsFooter-item
+        = link_to "クッキー", "//support.twitter.com/articles/20170514"
+      %li.StreamsFooter-item
+        = link_to "広告について", "//support.twitter.com/articles/20170451"
+      %li.StreamsFooter-item
+        = link_to "ブランド", "//about.twitter.com/press/brand-assets"
+      %li.StreamsFooter-item
+        = link_to "アプリ連携", "https://about.twitter.com/products"
+      %li.StreamsFooter-item
+        = link_to "広告管理画面", "//ads.twitter.com/?ref=gl-tw-tw-twitter-advertise"
+      %li.StreamsFooter-item
+        = link_to "マーケティング", "https://marketing.twitter.com"
+      %li.StreamsFooter-item
+        = link_to "広告掲載方法", "https://business.twitter.com/ja"
+      %li.StreamsFooter-item
+        = link_to "開発者", "//dev.twitter.com"
+      %li.StreamsFooter-item
+        = link_to "プロフィール一覧", "/i/directory/profiles"
+      %li.StreamsFooter-item
+        = link_to "設定", "/settings/personalization"
+      %li.StreamsFooter-item.StreamsFooter-copyright © 2018 Twitter

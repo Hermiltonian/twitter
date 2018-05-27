@@ -1,0 +1,77 @@
+.EdgeButton {
+  border: 1px solid $theme-color;
+  border-radius: 100px;
+  box-shadow: none;
+  padding: 6px 16px;
+  position: relative;
+  font-size: 14px;
+  text-align: center;
+  line-height: 20px;
+  font-weight: bold;
+  cursor: pointer;
+  white-space: nowrap;
+
+  &--primary {
+    background-color: $theme-color;
+    border: 1px solid $theme-color;
+    color: #fff;
+  }
+  &--secondary {
+    background-color: #fff;
+    border: 1px solid $theme-color;
+    color: $theme-color;
+  }
+  &--small {
+    padding: 4px 12px;
+    font-size: 12px;
+    line-height: 16px;
+  }
+  &--medium {
+    padding: 6px 16px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  &--transparent {
+    background-color: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+  }
+}
+
+a {
+  color: $theme-color;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+input {
+  -webkit-transition: background .2s linear;
+     -moz-transition: background .2s linear;
+      -ms-transition: background .2s linear;
+       -o-transition: background .2s linear;
+          transition: background .2s linear;
+}
+
+.Icon {
+  background-color: transparent;
+  display: inline-block;
+  font-style: normal;
+  vertical-align: baseline;
+  position: relative;
+}
+
+.StreamsFooter {
+  border-top: 1px solid #e6ecf0;
+  margin: 0;
+  padding: 11px 0;
+  background-color: #fff;
+  bottom: -10%;
+  width: 100%;
+  position: fixed;
+  z-index: 2;
+
+  &--fixed {
+    width: 100%;
+    bottom: 0;
+  }
+}
