@@ -1,35 +1,50 @@
 .Signup
   %nav.navbar.Signup__Header.row.no-gutters.flex-nowrap
     .Signup__Header--Previous.col-5
-      .navbar-text.Icon.Icon--previous.btn= fa_icon("arrow-left", hidden: "hidden", id: "signup-back")
+      .navbar-text.Icon.Icon--previous.btn= fa_icon("arrow-left", hidden: "hidden", id: "btn-retry-id")
     .Signup__Header--Icon.col-2
       .navbar-text.Icon.Icon--bird= fa_icon("twitter")
     .Signup__Header--Next.col-5
-      = button_tag "次へ", disabled: "disabled", id: "signup-next", class: "navbar-text btn EdgeButton EdgeButton--primary EdgeButton--medium"
+      = button_tag "次へ", disabled: "disabled", id: "btn-confirm-id", class: "navbar-text btn EdgeButton EdgeButton--primary EdgeButton--medium"
+      = button_tag "次へ", disabled: "disabled", hidden: "hidden", id: "btn-register-password", class: "navbar-text btn EdgeButton EdgeButton--primary EdgeButton--medium"
   .Signup__Body.row.no-gutters
-    .Signup__Body__Contents.col
+    .Signup__Body__ID.col
+      %h1.Signup__Body--Title アカウントを作成
+      .Signup__Body__ID__Name
+        %input#input-name.Signup--Input.Signup__Body__ID__Name--Input{placeholder: "名前", maxlength: 50}
+        .Signup__Body__ID__Name--No-name-error{hidden: "hidden"}
+          名前を入力してください
+        .Signup__Body__ID__Name--Wordcounter
+          0/50
+      .Signup__Body__ID__Phone
+        %input#input-phone.Signup--Input.Signup__Body__ID__Phone--Input{type: "phone", placeholder: "電話番号"}
+        .Signup__Body__ID__Phone--Invalid{hidden: "hidden"}
+          有効な電話番号を入力してください。
+        #change_from_phone_to_email.Signup__Body__ID__Phone--ChangeInput
+          かわりにメールアドレスを登録する
+      .Signup__Body__ID__Email{hidden: "hidden"}
+        %input#input-email.Signup--Input.Signup__Body__ID__Email--Input{type: "email", placeholder: "メール"}
+        .Signup__Body__ID__Email--Invalid{hidden: "hidden"}
+          有効なメールアドレスを入力してください。
+        #change_from_email_to_phone.Signup__Body__ID__Email--ChangeInput
+          かわりに電話番号を登録する
+      .Signup__Body__ID__Fix{hidden: "hidden"}
+        .Signup__Body__ID__Fix--Notice
+          アカウントを作成すると、
+          = link_to("利用規約", "")
+          、および
+          = link_to("Cookieの使用", "")
+          を含む
+          = link_to("プライバシーポリシー", "")
+          に同意したことになります。あなたのメールアドレスや電話番号を連絡先に保存しているTwitterユーザーに通知などが表示されます。
+          = link_to("プライバシーの設定", "")
+        .Signup__Body__ID__Fix--Button
+          = button_tag "登録する", id: "btn-fix-id", class: "btn EdgeButton EdgeButton--primary"
+    .Signup__Body__Password.col{hidden: "hidden"}
       %form
-        %h1.Signup__Body__Contents__Title アカウントを作成
-        .Signup__Body__Contents__Name
-          %input#input-name.Signup__Body__Contents__Name--Input{placeholder: "名前", maxlength: 50}
-          .Signup__Body__Contents__Name--No-name-error{hidden: "hidden"}
-            名前を入力してください
-          .Signup__Body__Contents__Name--Wordcounter
-            0/50
-        .Signup__Body__Contents__Phone
-          %input#input-phone.Signup__Body__Contents__Phone--Input{type: "phone", placeholder: "電話番号"}
-          .Signup__Body__Contents__Phone--Invalid{hidden: "hidden"}
-            有効な電話番号を入力してください。
-          #change_from_phone_to_email.Signup__Body__Contents__Phone--ChangeInput
-            かわりにメールアドレスを登録する
-        .Signup__Body__Contents__Email
-          %input#input-email.Signup__Body__Contents__Email--Input{type: "email", placeholder: "メール", hidden: "hidden"}
-          .Signup__Body__Contents__Email--Invalid{hidden: "hidden"}
-            有効なメールアドレスを入力してください。
-          #change_from_email_to_phone.Signup__Body__Contents__Email--ChangeInput{hidden: "hidden"}
-            かわりに電話番号を登録する
-        .Signup__Body__Contents__Submit{hidden: "hidden"}
-          .Signup__Body__Contents__Submit--Notice
-            アカウントを作成すると、利用規約、およびCookieの使用を含むプライバシーポリシーに同意したことになります。あなたのメールアドレスや電話番号を連絡先に保存しているTwitterユーザーに通知などが表示されます。プライバシーの設定
-          .Signup__Body__Contents__Submit--Button
-            = submit_tag "登録する", id: "signup-submit", class: "btn EdgeButton EdgeButton--primary"
+        %h1.Signup__Body--Title パスワードを入力
+        .Signup__Body__Password
+          6文字以上の英数字にしてください。
+          %input#input-password.Signup--Input.Signup__Body__Password--Input{type: "password", placeholder: "パスワード", minlength: 6}
+          .Signup__Body__Password--Invalid{hidden: "hidden"}
+            より複雑なパスワードにしてください。
