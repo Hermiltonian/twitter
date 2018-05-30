@@ -179,7 +179,7 @@ $(function() {
     ) : (
       // NGの場合はエラーメッセージを表示
       unsetHidden($(".Signup__Body__ID__Name--No-name-error"))
-    )
+    );
 
     // 次へボタン有効化チェック
     activateBtnConfirmID();
@@ -254,8 +254,8 @@ $(function() {
     setHidden($("#btn-retry-id, .Signup__Body__ID__Fix"));
 
     // 入力フォームの再表示
-    if ($("#input-phone").val()) {changeIntoPhoneInput()};
-    if ($("#input-email").val()) {changeIntoEmailInput()};
+    if ($("#input-phone").val()) {changeIntoPhoneInput();}
+    if ($("#input-email").val()) {changeIntoEmailInput();}
   });
 
   /*
