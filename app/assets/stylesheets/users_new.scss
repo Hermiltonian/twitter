@@ -1,0 +1,96 @@
+.Signup {
+
+  &__Header {
+    max-width: 600px;
+    @media only screen and (min-width: 1100px) {
+      max-width: 1000px;
+    }
+    height: 52.5px;
+    margin: auto;
+    &--Previous {
+      .Icon--previous {
+        font-size: 24px;
+      }
+    }
+    &--Icon {
+      text-align: center;
+      .Icon--bird {
+        font-size: 28px;
+      }
+    }
+    &--Next {
+      text-align: right;
+      .btn:disabled {
+        cursor: default;
+      }
+    }
+  }
+
+  &__Body {
+    max-width: 600px;
+    margin: auto;
+    &--Title {
+      margin: 1rem 0;
+      font-size: 22.5px;
+      font-weight: bold;
+    }
+    &__ID {
+      margin: 0 40px;
+      &__Name {
+        &--Input {
+        }
+        &--No-name-error {
+          @include singup-error-text;
+        }
+        &--Wordcounter {
+          float: right;
+          font-size: .85rem;
+          color: $twitter-gray;
+        }
+      }
+      &__Phone {
+        &--Input {
+        }
+        &--Invalid {
+          @include singup-error-text;
+        }
+        &--ChangeInput {
+          @include signup-change-id-type-text;
+        }
+      }
+      &__Email {
+        &--Input {
+        }
+        &--Invalid {
+          @include singup-error-text;
+        }
+        &--ChangeInput {
+          @include signup-change-id-type-text;
+        }
+      }
+      &__Fix {
+        &--Notice {
+          margin-top: 4rem;
+          font-size: 15px;
+        }
+        &--Button {
+          margin-top: 1rem;
+          button {
+            width: 100%;
+            min-height: 50px;
+            font-size: 1.25rem;
+          }
+        }
+      }
+    }
+    &__Password {
+      color: $twitter-gray;
+      font-size: 15px;
+      &--Input {
+      }
+      &--Invalid {
+        @include singup-error-text;
+      }
+    }
+  }
+}

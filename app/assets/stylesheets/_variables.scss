@@ -1,2 +1,16 @@
 $theme-color: #1da1f2;
 $banner-height: 62px;
+$twitter-gray: rgb(101, 119, 134);
+$danger-color: rgb(224, 36, 94);
+
+@mixin singup-error-text {
+  color: $danger-color;
+  font-size: 15px;
+}
+
+@mixin signup-change-id-type-text {
+  margin-top: 15px;
+  font-size: 15px;
+  color: $theme-color;
+  cursor: pointer;
+}
