@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_05_31_084437) do
+ActiveRecord::Schema.define(version: 2018_05_31_091943) do
+
+  create_table "profiles", primary_key: "users_id", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.string "name", null: false
+    t.string "biography"
+    t.string "location"
+    t.string "website"
+    t.date "birthday"
+    t.string "theme_color", default: "1da1f2", null: false
+    t.string "profile_photo", default: "empty_avatar.png", null: false
+    t.string "header_photo"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_profiles_on_name"
+    t.index ["users_id"], name: "index_profiles_on_users_id"
+  end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -31,4 +46,5 @@ ActiveRecord::Schema.define(version: 2018_05_31_084437) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "profiles", "users", column: "users_id"
 end
