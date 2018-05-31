@@ -84,8 +84,11 @@
       }
     }
     &__Password {
-      color: $twitter-gray;
-      font-size: 15px;
+      margin: 0 40px;
+      p {
+        color: $twitter-gray;
+        font-size: 15px;
+      }
       &--Input {
       }
       &--Invalid {
