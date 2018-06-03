@@ -1,0 +1,50 @@
+.Signup
+  = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+    = fields_for @profile do |pf|
+      %nav.navbar.Signup__Header.row.no-gutters.flex-nowrap
+        .Signup__Header--Previous.col-5
+          .navbar-text.Icon.Icon--previous.btn= fa_icon("arrow-left", hidden: "hidden", id: "btn-retry-id")
+        .Signup__Header--Icon.col-2
+          .navbar-text.Icon.Icon--bird= fa_icon("twitter")
+        .Signup__Header--Next.col-5
+          = button_tag "次へ", disabled: "disabled", id: "btn-confirm-id", class: "navbar-text btn EdgeButton EdgeButton--primary EdgeButton--medium", type: "button"
+          = f.submit "次へ", disabled: "disabled", hidden: "hidden", id: "btn-register-password", class: "navbar-text btn EdgeButton EdgeButton--primary EdgeButton--medium"
+      .Signup__Body.row.no-gutters
+        .Signup__Body__ID.col
+          %h1.Signup__Body--Title アカウントを作成
+          .Signup__Body__ID__Name
+            = pf.text_field :name, id: "input-name", class: "Signup--Input Signup__Body__ID__Name--Input", placeholder: "名前", maxlength: 50
+            .Signup__Body__ID__Name--No-name-error{hidden: "hidden"}
+              名前を入力してください
+            .Signup__Body__ID__Name--Wordcounter
+              0/50
+          .Signup__Body__ID__Phone
+            = f.telephone_field :phone_number, id: "input-phone", class: "Signup--Input Signup__Body__ID__Phone--Input", placeholder: "電話番号"
+            .Signup__Body__ID__Phone--Invalid{hidden: "hidden"}
+              有効な電話番号を入力してください。
+            #change_from_phone_to_email.Signup__Body__ID__Phone--ChangeInput
+              かわりにメールアドレスを登録する
+          .Signup__Body__ID__Email{hidden: "hidden"}
+            = f.email_field :email, id: "input-email", class: "Signup--Input Signup__Body__ID__Email--Input", placeholder: "メール"
+            .Signup__Body__ID__Email--Invalid{hidden: "hidden"}
+              有効なメールアドレスを入力してください。
+            #change_from_email_to_phone.Signup__Body__ID__Email--ChangeInput
+              かわりに電話番号を登録する
+          .Signup__Body__ID__Fix{hidden: "hidden"}
+            .Signup__Body__ID__Fix--Notice
+              アカウントを作成すると、
+              = link_to("利用規約", "")
+              、および
+              = link_to("Cookieの使用", "")
+              を含む
+              = link_to("プライバシーポリシー", "")
+              に同意したことになります。あなたのメールアドレスや電話番号を連絡先に保存しているTwitterユーザーに通知などが表示されます。
+              = link_to("プライバシーの設定", "")
+            .Signup__Body__ID__Fix--Button
+              = button_tag "登録する", id: "btn-fix-id", class: "btn EdgeButton EdgeButton--primary", type: "button"
+        .Signup__Body__Password.col{hidden: "hidden"}
+          %h1.Signup__Body--Title パスワードを入力
+          %p 6文字以上の英数字にしてください。
+          = f.password_field :password, id: "input-password", class: "Signup--Input Signup__Body__Password--Input", placeholder: "パスワード", minlength: 6
+          .Signup__Body__Password--Invalid{hidden: "hidden"}
+            より複雑なパスワードにしてください。
