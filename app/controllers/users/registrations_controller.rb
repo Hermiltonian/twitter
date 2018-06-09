@@ -13,12 +13,9 @@ class Users::RegistrationsController < Devise::RegistrationsController
 
   # POST /resource
   def create
-    @user = User.new(user_params)
-    @user.create_name(profile_params[:name])
-
-    binding.pry
     super
 
+    @profile = resource.create_profile(profile_params)
   end
 
   # GET /resource/edit
