@@ -14,7 +14,6 @@ class Users::RegistrationsController < Devise::RegistrationsController
   # POST /resource
   def create
     super
-
     @profile = resource.create_profile(profile_params)
   end
 
