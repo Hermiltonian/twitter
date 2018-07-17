@@ -6,8 +6,6 @@ class User < ApplicationRecord
 
   has_one :profile
 
-  before_create :create_illegible_name
-
   validates :name,
    presence: true,
    uniqueness: { allow_blank: true },
@@ -15,29 +13,19 @@ class User < ApplicationRecord
    user_forbidden_words: true
 
   validates :phone_number,
-   uniqueness: true,
+   uniqueness: { allow_blank: true },
    presence: { if: -> { email.blank? } }
 
   validates :email,
-   uniqueness: true,
+   uniqueness: { allow_blank: true },
    presence: { if: -> { phone_number.blank? } }
 
   validates :password,
    length: { minimum: 6 },
    format: { with: /\A(?=.*[0-9])(?=.*[a-zA-Z]).{6,}\z/, message: "英数字を組み合わせてください。" }
 
-
-  protected
-
-  # devise :validatableのメソッドオーバーライド
-  def email_required?
-    false
-  end
-
-  private
-
   # サインアップ時のUser.nameの自動生成
-  def create_illegible_name
+  def self.create_illegible_name
     new_name = ""
     name_length = 10
     char_list = []
@@ -48,6 +36,14 @@ class User < ApplicationRecord
 
     1.upto(name_length) { new_name += char_list.sample }
 
-    self.name = new_name
+    new_name
   end
+
+  protected
+
+  # devise :validatableのメソッドオーバーライド
+  def email_required?
+    false
+  end
+
 end
