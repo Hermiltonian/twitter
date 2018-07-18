@@ -46,17 +46,17 @@ RSpec.describe User, type: :model do
       end
 
       it 'is invalid with a duplicate phone number' do
-        user1 = create(:user, phone_number: "09012341234", email: "")
-        user2 = build(:user, phone_number: "09012341234", email: "")
-        user2.valid?
-        expect(user2.errors[:phone_number]).to include("この電話番号は既に使われています。他の電話番号を入力してください。")
+        create(:user, phone_number: "09012341234", email: "")
+        user = build(:user, phone_number: "09012341234", email: "")
+        user.valid?
+        expect(user.errors[:phone_number]).to include("この電話番号は既に使われています。他の電話番号を入力してください。")
       end
 
       it 'is invalid with a duplicate email' do
-        user1 = create(:user, phone_number: "", email: "test@example.com")
-        user2 = build(:user, phone_number: "", email: "test@example.com")
-        user2.valid?
-        expect(user2.errors[:email]).to include("このメールアドレスは既に使われています。他のメールアドレスを入力してください。")
+        create(:user, phone_number: "", email: "test@example.com")
+        user = build(:user, phone_number: "", email: "test@example.com")
+        user.valid?
+        expect(user.errors[:email]).to include("このメールアドレスは既に使われています。他のメールアドレスを入力してください。")
       end
     end
 

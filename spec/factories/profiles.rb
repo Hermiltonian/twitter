@@ -8,7 +8,7 @@ FactoryGirl.define do
     location        Faker::Twitter.user[:location]
     website         Faker::Twitter.user[:url]
     birthday        Faker::Date.birthday(0,100)
-    theme_color     Faker::Twitter.user[:profile_background_color].gsub(/#/, '')
+    theme_color     Faker::Twitter.user[:profile_background_color].delete("#")
     profile_photo   Faker::Twitter.user[:profile_image_url]
     header_photo    Faker::Twitter.user[:profile_background_image_url]
   end

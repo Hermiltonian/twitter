@@ -3,7 +3,8 @@
     = fields_for @profile do |pf|
       %nav.navbar.Signup__Header.row.no-gutters.flex-nowrap
         .Signup__Header--Previous.col-5
-          .navbar-text.Icon.Icon--previous.btn= fa_icon("arrow-left", hidden: "hidden", id: "btn-retry-id")
+          .navbar-text.Icon.Icon--previous.btn
+            = fa_icon("arrow-left", hidden: "hidden", id: "btn-retry-id")
         .Signup__Header--Icon.col-2
           .navbar-text.Icon.Icon--bird= fa_icon("twitter")
         .Signup__Header--Next.col-5
