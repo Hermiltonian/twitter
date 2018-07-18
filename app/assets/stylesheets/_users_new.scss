@@ -1,25 +1,31 @@
 .Signup {
 
   &__Header {
+    height: 52.5px;
+    margin: auto;
     max-width: 600px;
+
     @media only screen and (min-width: 1100px) {
       max-width: 1000px;
     }
-    height: 52.5px;
-    margin: auto;
+
     &--Previous {
       .Icon--previous {
         font-size: 24px;
       }
     }
+
     &--Icon {
       text-align: center;
+
       .Icon--bird {
         font-size: 28px;
       }
     }
+
     &--Next {
       text-align: right;
+
       .btn:disabled {
         cursor: default;
       }
@@ -27,62 +33,77 @@
   }
 
   &__Body {
-    max-width: 600px;
     margin: auto;
+    max-width: 600px;
+
     &--Title {
-      margin: 1rem 0;
       font-size: 22.5px;
       font-weight: bold;
+      margin: 1rem 0;
     }
+
     &__ID {
       margin: 0 40px;
+
       &__Name {
         &--Input {
         }
+
         &--No-name-error {
           @include singup-error-text;
         }
+
         &--Wordcounter {
-          float: right;
-          font-size: .85rem;
           color: $twitter-gray;
+          font-size: .85rem;
+          float: right;
         }
       }
+
       &__Phone {
         &--Input {
         }
+
         &--Invalid {
           @include singup-error-text;
         }
+
         &--ChangeInput {
           @include signup-change-id-type-text;
         }
       }
+
       &__Email {
         &--Input {
         }
+
         &--Invalid {
           @include singup-error-text;
         }
+
         &--ChangeInput {
           @include signup-change-id-type-text;
         }
       }
+
       &__Fix {
         &--Notice {
-          margin-top: 4rem;
           font-size: 15px;
+          margin-top: 4rem;
         }
+
         &--Button {
           margin-top: 1rem;
+
           button {
-            width: 100%;
-            min-height: 50px;
             font-size: 1.25rem;
+            min-height: 50px;
+            width: 100%;
           }
         }
       }
     }
+
     &__Password {
       margin: 0 40px;
 
@@ -90,8 +111,10 @@
         color: $twitter-gray;
         font-size: 15px;
       }
+
       &--Input {
       }
+
       &--Invalid {
         @include singup-error-text;
       }
