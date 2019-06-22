@@ -1,0 +1,26 @@
+ja:
+  activerecord:
+    errors:
+      models:
+        user:
+          attributes:
+            name:
+              blank: "アカウント名を入力してください。"
+              taken: "このアカウント名は既に使われています。他の名前を入力してください。"
+              too_long: "アカウント名は15文字以下にしてください。"
+            phone_number:
+              blank: "電話番号を入力してください。"
+              taken: "この電話番号は既に使われています。他の電話番号を入力してください。"
+            email:
+              taken: "このメールアドレスは既に使われています。他のメールアドレスを入力してください。"
+            password:
+              too_short: "パスワードは6文字以上入力してください。"
+        profile:
+          attributes:
+            name:
+              blank: "名前を入力してください。"
+              too_long: "名前は50文字以下にしてください。"
+            biography:
+              too_long: "自己紹介は160文字以下にしてください。"
+            theme_color:
+              blank: "テーマカラーを入力してください。"
